@@ -10,10 +10,12 @@
 #endif
 
 // wrap geos.h import to silence geos gcc warnings
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wstrict-prototypes"
 #include <geos_c.h>
 #pragma GCC diagnostic pop
+#endif
 
 /* Macros to setup GEOS Context and error handlers
 
